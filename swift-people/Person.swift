@@ -28,7 +28,6 @@ class Person {
         self.name = name
         self.ageInYears = ageInYears
         
-        
     }
     
     
@@ -36,38 +35,73 @@ class Person {
         self.init(name: name, ageInYears: nil)
     }
     
-    
-    var defaultInitPerson = Person(name: "John Doe", ageInYears: nil)
-    
-    
-    
-    func celebrityBirthday() -> String {
-        
-        if ageInYears == nil {
-            
-            return "HAPPY BIRTHDAY, \(name.uppercased())!!!"
-            
-        } else if ageInYears != nil {
-            
-            if let ageInYears = ageInYears {
-                
-                var yearsOld = ageInYears
-                
-                yearsOld += 1
-                
-                let birthdayOrdinal = yearsOld.ordinal()
-                
-                return "HAPPY \(yearsOld)\(birthdayOrdinal) BIRTHDAY, \(name.uppercased())!!!"
-                
-            } else {
-                
-            }
-            
-        }
-        
-        
-        return "It's no one's birthday."
+    convenience init() {
+        self.init(name: "John Doe", ageInYears: nil)
     }
+    
+    
+    
+//    
+//    func celebrateBirthday() -> String {
+//        
+//        if ageInYears == nil {
+//            
+//            return "HAPPY BIRTHDAY, \(name.uppercased())!!!"
+//            
+//        } else {
+//            
+//            if let ageInYears = ageInYears {
+//                
+//                var yearsOld = ageInYears
+//            
+//                ageInYears += 1
+//                
+//                let birthdayOrdinal = yearsOld.ordinal()
+//                
+//                return "HAPPY \(yearsOld)\(birthdayOrdinal) BIRTHDAY, \(name.uppercased())!!!"
+//                
+//            } else {
+//                
+//            }
+//            
+//        }
+//        
+//        
+//        return "It's no one's birthday."
+//    }
+//    
+    
+//    func henry() {
+//        if ageInYears = nil {
+//            // do something
+//        } else if ageInYears != nil {
+//            var yearsOld = ageInYears
+//            
+//            // something
+//        }
+//        
+//    }
+    
+    
+    func celebrateBirthday() -> String {
+        
+        if var yearsOld = ageInYears {
+            
+            yearsOld += 1
+            
+            self.ageInYears = yearsOld
+            
+            return "HAPPY \(yearsOld)\(yearsOld.ordinal().uppercased()) BIRTHDAY, \(name.uppercased())!!!"
+            
+        } else {
+            
+           return "HAPPY BIRTHDAY, \(name.uppercased())!!!"
+        
+        }
+    }
+    
+    
+    
     
 
     func learnSkillBash() {
@@ -100,20 +134,6 @@ class Person {
         }
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 
